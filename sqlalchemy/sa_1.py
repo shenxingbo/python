@@ -14,10 +14,11 @@ from sqlalchemy import Column
 from sqlalchemy.types import Integer, Date, DateTime, Float, Text, String
 
 
-def create_db(Base):
+def create_all_table(Base):
     Base.metadata.create_all()
 
-def drop_db(Base):
+
+def drop_all_table(Base):
     Base.metadata.drop_all()
 
 
