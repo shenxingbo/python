@@ -13,6 +13,14 @@ Base = declarative_base(engine)
 from sqlalchemy import Column
 from sqlalchemy.types import Integer, Date, DateTime, Float, Text, String
 
+
+def create_db(Base):
+    Base.metadata.create_all()
+
+def drop_db(Base):
+    Base.metadata.drop_all()
+
+
 class User(Base):
 
     __tablename__ = 't_user'
@@ -30,4 +38,3 @@ class Address(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     aname = Column(String(30), unique=True)
 
-Base.metadata.create_all()
